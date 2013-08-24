@@ -36,3 +36,17 @@ Algoritms:
 
 1.Achar o menor valor em uma lista. chapter_2, list_functions.py
 2. Detectar anagramas. chapter_2, anagram_functions.py
+
+
+OO:
+1. vc tem que pensar o seguinte, se esta fazendo funcoes agrupadas em classe e para que a classe seja reutilizada
+e nao as funcoes. logo nao deve pensar nessas funcoes sendo usadas soltas. Oque vc pode fazer se quiser reaproveitar
+as funcoes e cria-las em modulos e utiliza-las em classes. No entanto, o poder de reutilizacao delas ficara, compre-
+metido nas classes.
+2. A grande sacada da orientacao a objetos  e que a simples escrita de um metodo ou atribuicao de uma variavel,
+faca funcionar todo um grande projeto. Podemos pensar desta forma no uso das classes abstratas. LEmbrando que a classe
+abstrata nada mais e do que uma classe como qualquer outra, que permite uma grande customizacao. ex: implementar os
+metodos. E uma estrategia de heranca, para facilitar a extensao e implementacao de sistemas.
+3.coisas de uma linha so, eu ja nao gosto de colocar em funcao por que dificulta a leitura.
+outra coisa tem que pensar bem no quanto uma funcao tem qu ser generica, pq as vezes ela
+comeca a ficar misturada. Tem que pensar bem no proposito de uma funcao e se ela pode ficar misturada.
