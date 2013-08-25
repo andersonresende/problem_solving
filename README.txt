@@ -10,7 +10,9 @@ Programa - algoritimo implementado em uma linguagem de programacao.
 
 Collections - Qualquer colecao de dados, que possuem posicao relativa entre eles.
 Strutura de dados lineares -Estruturas lineares pode ser pensado como tendo duas extremidades.
-stack - lifo
+    1. stack - lifo (entender que e uma pilha significa saber que sempre vai ser tirado o ultimo
+                     elemento, vc so precisa se preocupar, quando e hora de adicionar ou retirar.
+                     Mas vc sabe que sempre sera o ultimo.)
 
 
 Logica:
@@ -21,6 +23,7 @@ procuram os chars da primeira na segunda, esquecendo dos chars que podem sobrar.
 
 Python:
 
+split - so cria lista se as strings tiverem espacos em branco, se nao e melhor usar list(word)
 sorted(string) - ordena uma string, pode receber uma chave, key, como uma funcao para definir os criterios de ordencao.
 por exemplo o tamanho de uma string.
 ord(char) - retorna a posicao unicode de um char, pode ser usado para mapear a posicao de letras do alfabeto em uma
@@ -31,6 +34,7 @@ tirando os itens do inicio.
 range() e melhor do que compression para criar uma lista com determinada quantidade de itens, mas ambos sao melhores do que
 usar for com concatenacao ou append.
 operador in - e O(1) em dicts, mas O(n) em listas.
+
 
 Algoritms:
 
