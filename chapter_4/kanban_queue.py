@@ -17,48 +17,35 @@ quantidade de historias em um determinado tempo.
 
 #E preciso alterar o comportamento do set no descriptor.
 
-
 from datetime import datetime
 
 class Story(object):
-
-	class Desc_None(object):
-		def __get__(self, instance, owner):
-			return self.value
-		def __set__(self, instance, value):
-			if hasattr(self, 'value') and self.value==None:
-				self.value = value
-			elif not hasattr(self, 'value'):
-				self.value = value
 
 	class Desc(object):
 		def __get__(self, instance, owner):
 			return self.value
 		def __set__(self, instance, value):
-			if hasattr(self, 'value'):
-				pass
-			else:
-				self.value = value
+			if  not hasattr(self, 'value'):
+				self.value = value				
 
 	def __init__(self, description):
 		self.description = description
 		self.enter_queue_time = datetime.today()
 		self.estimate = self.set_estimate()
-		self.queue_wait = None
-		self.kanban_wait = None
 
 	estimate = Desc()
 	enter_queue_time = Desc()
-	queue_wait = Desc_None()
+	queue_wait = Desc()
+	kanban_wait = Desc()
 
-	def queue_waits(self, start_kanban_time):
+	def queue_wait(self, start_kanban_time):
 		wait = start_kanban_time - self.enter_queue_time
 		self.queue_wait = wait
 
 	def kanban_wait(self, finish_kanban_time):
 		wait = finish_kanban_time - self.queue_wait
 		self.kanban_wait = wait
-
+	
 	def set_estimate(self):
 		estimativas = (('P', 1), ('M', 2), ('G', 3),)
 		if not hasattr(self, 'estimate'):
@@ -66,12 +53,49 @@ class Story(object):
 			return random.choice(estimativas)
 
 
+from queue import Queue
+class Kanban(object):
+#kanban recebe uma historia vinda da fila, ele manipula ela de acordo com a sua estimativa
+#e depois recebe outra historia. No final ele da a qauntidade de historias que ele trabalhou em um mes. 
+#o kanban vai conter uma fila de storys. O kanban nao e uma fila pq ele precisa processar a historia,
+#dividir em fazes, adicionar tempo.
+	
+	
+	def __init__(self, storys):
+		self.queue_storys = self.create_storys(storys)
+		self.current_story = None
+
+	def create_storys(storys):
+		q = Queue()
+		for s in storys:
+			q.enqueue(s)
+		return q
+
+	# def start_kanban(self):
+
+
+
+
+k = Kanban([1,2,3])
+print k.queue_storys
+
+
+
+
+
+
+#apenas metodos com de objeto, mesmo estando abaixo do init, podem ser usados no init.Os demais
+#metodos, so sao reconhecidos se chamados a partir da classe Classe.method()
+
+
+
+
 
 #em python e possivel criar atributos apos criar a classe, pensar sobre a necessidade de alguns
-#atributos serem criados antes ou depois da criacao da classe. Criar atributos durante a execução,
-#dificultam a documentação, pois fica mais facil encontra-los ja no init e tambem e complicado
+#atributos serem criados antes ou depois da criacao da classe. Criar atributos durante a execucao,
+#dificultam a documentacao, pois fica mais facil encontra-los ja no init e tambem e complicado
 #pq se quisermos bloquear a criacao de atributos da nossa classe no __setattr__ nao poderemos fazer
-#pois necessitamos dos atributos em execução. No entanto existem atributos que so deveriam ser criados,
+#pois necessitamos dos atributos em execucao. No entanto existem atributos que so deveriam ser criados,
 #apos a chamada de um metodo especifico e deixa-los no init, podemos altera-los sem o uso do metodo,
 #e so depois bloquarmos a sua modificacao no descriptor.
 
@@ -94,3 +118,12 @@ class Story(object):
 
 #E melhor colocar os atributos no init  mesmo que so sejam usados depois, pq fica melhor pra documentacao
 #e entendimento das classes.
+
+
+#Existem dois comportamentos distintos um e da um erro, excecao em tempo de execucao. Outro e
+# vc atribuir um valor errado a uma variavel.ex: alterar um atributo sem passar pelo set dele.
+#O problema e que para o primeiro comportamento, python vai permitir compilar e so vai dar pau
+#em tempo de execucao.
+
+#se eu quiser que um metodo so seja chamado dentro da classe, talvez eu tenha que sobrescrever o
+#__getattribute__. Se o valor que ele atribui ja existir eu nao permito a chamada do metodo.
