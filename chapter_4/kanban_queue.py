@@ -6,7 +6,7 @@ quantidade de historias em um determinado tempo.
 
 
 #E possivel encapsular totalmente uma variavel usando descriptors de forma pura.
-# class Desc_None(object):
+# class Desc(object):
 # 		def __get__(self, instance, owner):
 # 			return self.value
 # 		def __set__(self, instance, value):
@@ -59,7 +59,16 @@ class Kanban(object):
 #e depois recebe outra historia. No final ele da a qauntidade de historias que ele trabalhou em um mes. 
 #o kanban vai conter uma fila de storys. O kanban nao e uma fila pq ele precisa processar a historia,
 #dividir em fazes, adicionar tempo.
-	
+#1. Kanban me de a quantidade de historias finalizadas em 30 dias
+#2. Cada historia tenha registrado quanto tempo elas esperaram no to-do
+#Adiciona as historias no kanban
+#Em um loop de 30 dias
+  #Pega a primeira historia do kanban
+  #seta nela a data de entra no kanban
+  #apos finalizar essa historia
+  #adiciona ela na lista de finalizadas
+  #ve se o kanban esta livre e pega uma nova historia
+  #repete o processo ate acabar os 30 dias
 	
 	def __init__(self, storys):
 		self.queue_storys = self.create_storys(storys)
@@ -126,4 +135,5 @@ print k.queue_storys
 #em tempo de execucao.
 
 #se eu quiser que um metodo so seja chamado dentro da classe, talvez eu tenha que sobrescrever o
-#__getattribute__. Se o valor que ele atribui ja existir eu nao permito a chamada do metodo.
+#__getattribute__. Se o valor que ele atribui ja existir eu nao permito a chamada do metodo. O ideal
+#mesmo e usar o dunder score.
