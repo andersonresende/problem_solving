@@ -22,29 +22,25 @@ from datetime import datetime
 class Story(object):
 
 	class Desc(object):
+		'''Get sem Set'''
 		def __get__(self, instance, owner):
 			return self.value
 		def __set__(self, instance, value):
 			if  not hasattr(self, 'value'):
-				self.value = value				
+				self.value = value
 
-	def __init__(self, description):
+	def __init__(self, description, day):
 		self.description = description
-		self.enter_queue_time = datetime.today()
+		self.enter_todo_time = day
 		self.estimate = self.set_estimate()
 
-	estimate = Desc()
-	enter_queue_time = Desc()
-	queue_wait = Desc()
-	kanban_wait = Desc()
+	#estimate = Desc()
+	enter_todo_time = Desc()
+	todo_wait = Desc()
 
-	def queue_wait(self, start_kanban_time):
-		wait = start_kanban_time - self.enter_queue_time
-		self.queue_wait = wait
-
-	def kanban_wait(self, finish_kanban_time):
-		wait = finish_kanban_time - self.queue_wait
-		self.kanban_wait = wait
+	def todo_wait(self, start_kanban_time):
+		wait = start_kanban_time - self.enter_todo_time
+		self.todo_wait = wait
 	
 	def set_estimate(self):
 		estimativas = (('P', 1), ('M', 2), ('G', 3),)
@@ -55,39 +51,66 @@ class Story(object):
 
 from queue import Queue
 class Kanban(object):
-#kanban recebe uma historia vinda da fila, ele manipula ela de acordo com a sua estimativa
-#e depois recebe outra historia. No final ele da a qauntidade de historias que ele trabalhou em um mes. 
-#o kanban vai conter uma fila de storys. O kanban nao e uma fila pq ele precisa processar a historia,
-#dividir em fazes, adicionar tempo.
-#1. Kanban me de a quantidade de historias finalizadas em 30 dias
-#2. Cada historia tenha registrado quanto tempo elas esperaram no to-do
-#Adiciona as historias no kanban
-#Em um loop de 30 dias
-  #Pega a primeira historia do kanban
-  #seta nela a data de entra no kanban
-  #apos finalizar essa historia
-  #adiciona ela na lista de finalizadas
-  #ve se o kanban esta livre e pega uma nova historia
-  #repete o processo ate acabar os 30 dias
-	
-	def __init__(self, storys):
-		self.queue_storys = self.create_storys(storys)
-		self.current_story = None
+	def __init__(self):
+		self.todo_storys = Queue()
+		self.finish_storys = Queue()
+		self.__current_story = None
 
-	def create_storys(storys):
-		q = Queue()
+	def add_storys(self, storys, day):
+		'''Add new storys in kanban'''
 		for s in storys:
-			q.enqueue(s)
-		return q
+			self.todo_storys.enqueue(s)
 
-	# def start_kanban(self):
+	def set_todo_story(self, day):
+		story = self.todo_storys.dequeue()
+		story.todo_wait(day)
+		self.__current_story = story
+
+	def add_finish_story(self):
+		self.finish_storys.enqueue(self.__current_story)
+		self.__current_story = None
+
+	def is_busy(self):
+		return self.__current_story
+
+	def time_story_conclude(self, cont):
+		return True if self.__current_story.estimate[1] == cont else False
+
+
+def execute_kanban():
+
+	cont = 0
+	kanban = Kanban()
+	for day in range(1,11):
+		
+		if day == 1:
+			storys = []
+			for s in ['a','b','c','d','e','f','g','h']:
+				st = Story(s, day)
+				print st.estimate
+				storys.append(st)
+			kanban.add_storys(storys, day)
+
+		if not kanban.is_busy():
+			kanban.set_todo_story(day)
+
+		cont += 1
+		if kanban.time_story_conclude(cont):
+			kanban.add_finish_story()
+			cont = 0
+	
+	for q in kanban.todo_storys, kanban.finish_storys:
+		print '-----'*5
+		print q.size()
+		while not q.isEmpty():
+			print q.dequeue().estimate
 
 
 
 
-k = Kanban([1,2,3])
-print k.queue_storys
 
+
+execute_kanban()
 
 
 
@@ -137,3 +160,7 @@ print k.queue_storys
 #se eu quiser que um metodo so seja chamado dentro da classe, talvez eu tenha que sobrescrever o
 #__getattribute__. Se o valor que ele atribui ja existir eu nao permito a chamada do metodo. O ideal
 #mesmo e usar o dunder score.
+
+
+#quando vc usa o dunder antes de uma variavel ou metodo vc nao consegue chama-lo fora da classe ou
+# a partir do objeto.
