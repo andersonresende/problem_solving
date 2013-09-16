@@ -3,21 +3,24 @@
 Elaborar um Kanban com WIP unico, recebendo itens por semana e no final apresentar a
 quantidade de historias em um determinado tempo.
 '''
-
-
-#E possivel encapsular totalmente uma variavel usando descriptors de forma pura.
-# class Desc(object):
-# 		def __get__(self, instance, owner):
-# 			return self.value
-# 		def __set__(self, instance, value):
-# 			self.value = value
-#Agora para fazer comportamentos distintos, como por exemplo:
-	#Inicializar uma variavel e so poder altera-la uma vez. ex: queu_wait
-	# Inicializar uma varialvel e nao altera-la mais. ex: estimate
-
-#E preciso alterar o comportamento do set no descriptor.
-
 from datetime import datetime
+
+class Queue(object):
+    def __init__(self):
+        self.items = []
+
+    def isEmpty(self):
+        return self.items == []
+
+    def enqueue(self, item):
+        self.items.insert(0, item)
+
+    def dequeue(self):
+        return self.items.pop()
+
+    def size(self):
+        return len(self.items)
+
 
 class Story(object):
 
@@ -34,7 +37,6 @@ class Story(object):
 		self.enter_todo_time = day
 		self.estimate = self.set_estimate()
 
-	#estimate = Desc()
 	enter_todo_time = Desc()
 	todo_wait = Desc()
 
@@ -49,7 +51,6 @@ class Story(object):
 			return random.choice(estimativas)
 
 
-from queue import Queue
 class Kanban(object):
 	def __init__(self):
 		self.todo_storys = Queue()
@@ -77,7 +78,7 @@ class Kanban(object):
 		return True if self.__current_story.estimate[1] == cont else False
 
 
-def execute_kanban():
+def main_execute_kanban():
 
 	cont = 0
 	kanban = Kanban()
@@ -98,69 +99,14 @@ def execute_kanban():
 		if kanban.time_story_conclude(cont):
 			kanban.add_finish_story()
 			cont = 0
-	
-	for q in kanban.todo_storys, kanban.finish_storys:
-		print '-----'*5
-		print q.size()
-		while not q.isEmpty():
-			print q.dequeue().estimate
+
+	print '-----Kanban Finish Storys-----'
+	q = kanban.finish_storys
+	print q.size()
+	while not q.isEmpty():
+		s = q.dequeue()
+		print 'Estimativa: %s / Espera no to-do: %s'  % (s.estimate, s.todo_wait)
+
+main_execute_kanban()
 
 
-
-
-
-
-execute_kanban()
-
-
-
-
-
-#apenas metodos com de objeto, mesmo estando abaixo do init, podem ser usados no init.Os demais
-#metodos, so sao reconhecidos se chamados a partir da classe Classe.method()
-
-
-
-
-
-#em python e possivel criar atributos apos criar a classe, pensar sobre a necessidade de alguns
-#atributos serem criados antes ou depois da criacao da classe. Criar atributos durante a execucao,
-#dificultam a documentacao, pois fica mais facil encontra-los ja no init e tambem e complicado
-#pq se quisermos bloquear a criacao de atributos da nossa classe no __setattr__ nao poderemos fazer
-#pois necessitamos dos atributos em execucao. No entanto existem atributos que so deveriam ser criados,
-#apos a chamada de um metodo especifico e deixa-los no init, podemos altera-los sem o uso do metodo,
-#e so depois bloquarmos a sua modificacao no descriptor.
-
-#se vc so vai acessar um atributo apos ele estar setado, no fluxo natural do sistema, entao, nao 
-#precisa se preoucupar com a tentativa de acessa-lo antes disso, se ele vai existir ou nao.
-
-
-#muitas vezes nos criamos metodos para encapsular comportamentos de get e set e deixamos a classe
-#aberta para esses atributos serem acessados normalmente, isso pode gerar erros para desenvolvedores
-#futuros, que ao inves de usar os metodos usarao o atributo diretamente. Por isso e bom, tambem
-#bloquear esses atributos. Para que ele de erro em tempo de execucao, se usado erradamente.
-
-#Eu consigo bloquear um atributo, para ser acessado diretamente?? Eu consigo fazer com que ao chama-lo
-#venha o get dele? Voce consegue fazer isso de forma correta e totalmente bloqueada usando Descriptors.
-#propertys nao fazem esse trabalho tao bem, pois deixar o atributo ainda acessivel. 
-#Com descriptors eu tambem consigo fazer com que um atributo so seja setado uma vez e depois mais nunca.
-
-
-#Como inicializar um atributo via funcao no init e depois nao poder altera-lo??
-
-#E melhor colocar os atributos no init  mesmo que so sejam usados depois, pq fica melhor pra documentacao
-#e entendimento das classes.
-
-
-#Existem dois comportamentos distintos um e da um erro, excecao em tempo de execucao. Outro e
-# vc atribuir um valor errado a uma variavel.ex: alterar um atributo sem passar pelo set dele.
-#O problema e que para o primeiro comportamento, python vai permitir compilar e so vai dar pau
-#em tempo de execucao.
-
-#se eu quiser que um metodo so seja chamado dentro da classe, talvez eu tenha que sobrescrever o
-#__getattribute__. Se o valor que ele atribui ja existir eu nao permito a chamada do metodo. O ideal
-#mesmo e usar o dunder score.
-
-
-#quando vc usa o dunder antes de uma variavel ou metodo vc nao consegue chama-lo fora da classe ou
-# a partir do objeto.
