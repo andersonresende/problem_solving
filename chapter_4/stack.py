@@ -35,12 +35,16 @@ def revstring(s1):
     s2 = ''
     for c in s1:
         stack.push(c)
-    while not stack.isEmpty:
+    while not stack.isEmpty():
         s2 += stack.pop()
     return s2
 
 
-
-
-
-
+def palindrome(s1):
+    stack = Stack()
+    s2 = ''
+    for c in s1:
+        stack.push(c)
+    while not stack.isEmpty():
+        s2 += stack.pop()
+    return s1==s2

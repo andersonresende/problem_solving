@@ -13,6 +13,9 @@ Strutura de dados lineares -Estruturas lineares pode ser pensado como tendo duas
     1. stack - lifo (entender que e uma pilha significa saber que sempre vai ser tirado o ultimo
                      elemento, vc so precisa se preocupar, quando e hora de adicionar ou retirar.
                      Mas vc sabe que sempre sera o ultimo.)
+    2. queue - fifo
+obs: nos pegamos situacoes do mundo real, filas, pilhas, e criamos classes que simulem esses
+comportamentos.
 
 
 Logica:
@@ -34,7 +37,7 @@ tirando os itens do inicio.
 range() e melhor do que compression para criar uma lista com determinada quantidade de itens, mas ambos sao melhores do que
 usar for com concatenacao ou append.
 operador in - e O(1) em dicts, mas O(n) em listas.
-
+Descriptors, Propertys and dunder - geralmente nao sao usados em python, a filosofia da linguagem acredita muito mais na leitura de codigo para um bom entendimento. 
 
 Algoritms:
 

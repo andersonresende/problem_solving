@@ -79,7 +79,12 @@ class Kanban(object):
 
 
 def main_execute_kanban():
-
+	'''
+	Seu metodo precisa ser melhorado, por que se e uma simulacao
+	e vc pretende fazer varias simulacoes, vc deveria passar parametros
+	nele que seriam usados na simulacao de forma mais simples. Imagine
+	que alguem iria usar um aplicativo de simulacoes futuramente. 
+	'''
 	cont = 0
 	kanban = Kanban()
 	for day in range(1,11):
@@ -110,3 +115,11 @@ def main_execute_kanban():
 main_execute_kanban()
 
 
+
+
+# Codigo show que pode ser usado se vc quiser ao inves de usar true e false. Admintindo que o valor
+#inicial e None basta retornar a variavel e dar um if nela, se nao tiver sido preenchida sera, None(False)
+# se tiver sido preenchida retornara True.
+# def is_busy(self):
+		#valor inicial de __current_story e None
+# 		return self.__current_story
