@@ -1,11 +1,14 @@
 class Deque:
+    '''
+    Deque podem ser usadas pra simulat comportamentos
+    de filas e pilhas.
+    '''
     def __init__(self):
         self.items = []
 
     def isEmpty(self):
         return self.items == []
 
-    #essa e a grande diferenca dessa estrutura pra outras, essa possibilidade de insersao
     def addFront(self, item):
         self.items.append(item)
 

@@ -40,11 +40,11 @@ class BelgianDog(object):
         self.color = self.get_color()
 
     def get_color(self):
+        '''faz mas sentido sme ser class pois a cor e do objeto e nao da classe'''
         return self.belgian_colors[self.gens]
 
     def get_prole(self):
         pass
-
 
 class MaleBelgian(BelgianDog):
 
@@ -149,3 +149,5 @@ simulate_cross_dogs([MaleBelgian(1,0), FemaleBelgian(1,0), MaleBelgian(0,0), Fem
 # quando uso o django, ele faz todo o mapeamento automatico entao faz sentido, mas se nao
 #estou usando? e ae?
 #qual o problema de duplicidade se nao vou usar banco??
+
+#Staticos e Class so podem ser chamados tanto na class como no objeto, mas nunca podem ser chamados soltos.
