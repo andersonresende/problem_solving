@@ -1,4 +1,9 @@
 class Node(object):
+    '''
+    O no e necessario pq tiramos dos itens utilizados no encadeiamento
+    a responsabilidade de receberem eles mesmos como parametros, quebrando
+    a semantica do class. ex: Pessoa receber uma Pessoa...
+    '''
     def __init__(self,initdata):
         self.data = initdata
         self.next = None
