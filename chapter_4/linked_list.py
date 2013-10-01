@@ -34,6 +34,34 @@ class UnorderedList(object):
         temp.setNext(self.head)
         self.head = temp
 
+    def append(self, item):
+        cont = 1
+        size = self.size()
+        head = self.head
+        while cont < size:
+            head = head.next
+            cont+=1
+        head.next = Node(item)
+
+    def pop(self):
+        cont = 2
+        size = self.size()
+        head = self.head
+        while cont < size:
+            head = head.next
+            cont+=1
+        last_item = head.next
+        head.next = None
+        return last_item
+
+    def index(self, item):
+        cont = 0
+        head = self.head
+        while head.data != item:
+            head = head.next
+            cont+=1
+        return cont
+
     def size(self):
         current = self.head
         count = 0
@@ -70,3 +98,15 @@ class UnorderedList(object):
 
 
 
+ul = UnorderedList()
+ul.add(8)
+ul.add(1)
+ul.add(2)
+ul.add(3)
+ul.add(6)
+print ul.size()
+ul.append(4)
+print ul.size()
+ul.pop()
+print ul.size()
+print ul.index(8)

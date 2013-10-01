@@ -24,7 +24,6 @@ def circle_simulation(quant_people):
 	for lp in list_people:
 		cadeia.add(lp)
 	
-
 	while cadeia.size() > 1:
 		for p in list_people:
 			print p,
