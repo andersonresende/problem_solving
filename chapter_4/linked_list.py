@@ -22,6 +22,10 @@ class Node(object):
 
 
 class UnorderedList(object):
+    '''
+    Essa classe nos mostra que apenas com o uso de classes podemos
+    construir uma lista igual a default em python.
+    '''
     def __init__(self):
         #sempre o ultimo item
         self.head = None
@@ -29,7 +33,7 @@ class UnorderedList(object):
     def isEmpty(self):
         return self.head == None
 
-    def add(self,item):
+    def add(self, item):
         temp = Node(item)
         temp.setNext(self.head)
         self.head = temp
@@ -42,6 +46,19 @@ class UnorderedList(object):
             head = head.next
             cont+=1
         head.next = Node(item)
+
+    def insert(self, pos, item):
+        if pos == 0:
+            self.add(item)
+        else:
+            cont = 0
+            next = self.head
+            while pos-1 != cont:
+                next = next.next
+                cont += 1
+            new_item = Node(item)
+            new_item.next = next.next
+            next.next = new_item
 
     def pop(self):
         cont = 2
@@ -104,9 +121,6 @@ ul.add(1)
 ul.add(2)
 ul.add(3)
 ul.add(6)
-print ul.size()
-ul.append(4)
-print ul.size()
-ul.pop()
-print ul.size()
-print ul.index(8)
+
+
+
