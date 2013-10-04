@@ -48,3 +48,7 @@ def palindrome(s1):
     while not stack.isEmpty():
         s2 += stack.pop()
     return s1==s2
+
+
+
+print revstring('rar.lauD.piRDVD.divX.01c1l1S.0d.3l4V.0d.s4t4r1P/n45jd5hc9/selif/moc.seliftisoped//:ptth')
