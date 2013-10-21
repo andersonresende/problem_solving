@@ -58,7 +58,7 @@ print poli_super('ann1nna')
 
 
 
-
+# a recursao funciona como uma pilha: os ultimos elementos sao retornados primeiro.
 #qualquer numero dividido por dois vai restar 0 ou 1
 #regra pra nao quebrar recursao se passar vazio if s<=1, usar <=
 
