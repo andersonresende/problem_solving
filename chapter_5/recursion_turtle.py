@@ -13,25 +13,94 @@ import turtle
 # myWin.exitonclick()
 
 
-def tree(branchLen,t):
-    if branchLen > 5:
-        t.forward(branchLen)
-        t.right(20)
-        tree(branchLen-15,t)
-        t.left(40)
-        tree(branchLen-15,t)
-        t.right(20)
-        t.backward(branchLen)
+# def tree(branchLen,t):
+#     if branchLen > 5:
+#         t.forward(branchLen)
+#         t.right(20)
+#         tree(branchLen-15,t)
+#         t.left(40)
+#         tree(branchLen-15,t)
+#         t.right(20)
+#         t.backward(branchLen)
+#
+# def main():
+#     t = turtle.Turtle()
+#     myWin = turtle.Screen()
+#     t.left(90)
+#     t.up()
+#     t.backward(100)
+#     t.down()
+#     t.color("green")
+#     tree(150,t)
+#     myWin.exitonclick()
+#
+# main()
+
+import random
+
+def crazy_turtle(turtle, len_street):
+    if len_street < 1:
+        return 0
+
+    i = random.choice([1, 2, 3, 4])
+
+    if i == 1:
+        turtle.forward(len_street/100)
+    elif i ==2:
+        turtle.right(len_street/100)
+    elif i == 3:
+        turtle.backward(len_street/100)
+    else:
+        turtle.left(len_street/100)
+
+    crazy_turtle(turtle, len_street - i)
+
+
+# def main():
+#     t = turtle.Turtle()
+#     myWin = turtle.Screen()
+#     t.forward(500)
+#     t.left(90)
+#     t.forward(300)
+#     t.backward(600)
+#     t.forward(300)
+#     t.left(90)
+#     t.forward(700)
+#     t.right(180)
+#     #
+#     crazy_turtle(t, 5000)
+#
+# main()
+
+
+def quad(t, len):
+    if len >= 30:
+
+
+        t.forward(len)
+        t.right(90)
+        t.forward(len)
+        t.right(90)
+        t.forward(len)
+        t.right(90)
+        t.forward(len)
+        t.right(90)
+
+        quad(t, len/2)
+
+
+
 
 def main():
     t = turtle.Turtle()
     myWin = turtle.Screen()
-    t.left(90)
-    t.up()
-    t.backward(100)
-    t.down()
-    t.color("green")
-    tree(150,t)
-    myWin.exitonclick()
+    quad(t, 60)
 
 main()
+
+
+
+
+
+
+
