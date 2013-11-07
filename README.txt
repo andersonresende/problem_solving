@@ -38,6 +38,8 @@ range() e melhor do que compression para criar uma lista com determinada quantid
 usar for com concatenacao ou append.
 operador in - e O(1) em dicts, mas O(n) em listas.
 Descriptors, Propertys and dunder - geralmente nao sao usados em python, a filosofia da linguagem acredita muito mais na leitura de codigo para um bom entendimento. 
+Metodos - Vc pode chamar metodos estaticos e de classe via self, ou direto da classe. Logo eles podem
+ser chamados em qualquer lugar. No entanto, eu nao posso chamar nenhum metodo diretamente, dentro de outro metodo. Mas metodos externos a classe podem ser chamados em qualquer lugar.
 
 Algoritms:
 

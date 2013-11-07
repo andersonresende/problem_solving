@@ -6,10 +6,10 @@ import turtle
 # def drawSpiral(myTurtle, lineLen):
 #     if lineLen > 0:
 #         myTurtle.forward(lineLen)
-#         myTurtle.right(90)
-#         drawSpiral(myTurtle,lineLen-5)
+#         myTurtle.left(90)
+#         drawSpiral(myTurtle,lineLen+5)
 
-# drawSpiral(myTurtle,100)
+# drawSpiral(myTurtle,300)
 # myWin.exitonclick()
 
 
@@ -26,12 +26,12 @@ def tree(branchLen,t):
 def main():
     t = turtle.Turtle()
     myWin = turtle.Screen()
-    t.left(90)
+    t.left(40)
     t.up()
-    t.backward(100)
+    t.backward(50)
     t.down()
-    t.color("green")
-    tree(150,t)
+    t.color("blue")
+    tree(100,t)
     myWin.exitonclick()
 
 main()
