@@ -1,16 +1,22 @@
 import turtle
 
-# myTurtle = turtle.Turtle()
-# myWin = turtle.Screen()
+myTurtle = turtle.Turtle()
+myWin = turtle.Screen()
 
-# def drawSpiral(myTurtle, lineLen):
-#     if lineLen > 0:
-#         myTurtle.forward(lineLen)
-#         myTurtle.left(90)
-#         drawSpiral(myTurtle,lineLen+5)
 
-# drawSpiral(myTurtle,300)
-# myWin.exitonclick()
+def func_sum(lineLen):
+	return lineLen + 5
+def func_sub(lineLen):
+	return lineLen - 5
+
+def drawSpiral(myTurtle, lineLen, func):
+    if lineLen > 0:
+        myTurtle.forward(lineLen) # em frente
+        myTurtle.left(90)
+        drawSpiral(myTurtle,func(lineLen), func)
+
+drawSpiral(myTurtle,50, func_sub)
+myWin.exitonclick()
 
 
 # def tree(branchLen,t):
@@ -22,7 +28,7 @@ import turtle
 #         tree(branchLen-15,t)
 #         t.right(20)
 #         t.backward(branchLen)
-#
+
 # def main():
 #     t = turtle.Turtle()
 #     myWin = turtle.Screen()
@@ -33,71 +39,71 @@ import turtle
 #     t.color("green")
 #     tree(150,t)
 #     myWin.exitonclick()
-#
+
 # main()
 
-import random
+# import random
 
-def crazy_turtle(turtle, len_street):
-    if len_street < 1:
-        return 0
+# def crazy_turtle(turtle, len_street):
+#     if len_street < 1:
+#         return 0
 
-    i = random.choice([1, 2, 3, 4])
+#     i = random.choice([1, 2, 3, 4])
 
-    if i == 1:
-        turtle.forward(len_street/100)
-    elif i ==2:
-        turtle.right(len_street/100)
-    elif i == 3:
-        turtle.backward(len_street/100)
-    else:
-        turtle.left(len_street/100)
+#     if i == 1:
+#         turtle.forward(len_street/100)
+#     elif i ==2:
+#         turtle.right(len_street/100)
+#     elif i == 3:
+#         turtle.backward(len_street/100)
+#     else:
+#         turtle.left(len_street/100)
 
-    crazy_turtle(turtle, len_street - i)
+#     crazy_turtle(turtle, len_street - i)
+
+
+# # def main():
+# #     t = turtle.Turtle()
+# #     myWin = turtle.Screen()
+# #     t.forward(500)
+# #     t.left(90)
+# #     t.forward(300)
+# #     t.backward(600)
+# #     t.forward(300)
+# #     t.left(90)
+# #     t.forward(700)
+# #     t.right(180)
+# #     #
+# #     crazy_turtle(t, 5000)
+# #
+# # main()
+
+
+# def quad(t, len, p):
+#     if len:
+#         t.forward(len)
+#         t.right(90)
+#         t.forward(len)
+#         t.right(90)
+#         t.forward(len)
+#         t.right(90)
+#         t.forward(len)
+#         t.right(90)
+#         if p==1:
+#             quad(t, len/2, p+1)
+#         if p==2:
+#             t.forward(len)
+#             quad(t, len, p+1)
+#             t.right(90)
+#             t.forward(len*2)
 
 
 # def main():
 #     t = turtle.Turtle()
 #     myWin = turtle.Screen()
-#     t.forward(500)
-#     t.left(90)
-#     t.forward(300)
-#     t.backward(600)
-#     t.forward(300)
-#     t.left(90)
-#     t.forward(700)
-#     t.right(180)
-#     #
-#     crazy_turtle(t, 5000)
-#
+#     quad(t, 300, 1)
+
 # main()
-
-
-def quad(t, len, p):
-    if len:
-        t.forward(len)
-        t.right(90)
-        t.forward(len)
-        t.right(90)
-        t.forward(len)
-        t.right(90)
-        t.forward(len)
-        t.right(90)
-        if p==1:
-            quad(t, len/2, p+1)
-        if p==2:
-            t.forward(len)
-            quad(t, len, p+1)
-            t.right(90)
-            t.forward(len*2)
-
-
-def main():
-    t = turtle.Turtle()
-    myWin = turtle.Screen()
-    quad(t, 300, 1)
-
-main()
 
 
 
