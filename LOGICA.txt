@@ -1,0 +1,8 @@
+
+PRAZO:
+Quando algo esta dentro do prazo?
+Se a data de validade(final) for maior que a data atual(hoje):
+#hoje<prazo
+Quando algo passou do prazo?
+Se a data de validade for menor que a data atual:
+#hoje>prazo
