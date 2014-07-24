@@ -79,3 +79,18 @@
 #     return recursive_sequential_search(lista[1:], a)
 
 # print recursive_sequential_search([1,2,3], 4)
+
+
+def recursive_sequential_search_ordered(lista, a):
+
+    if not lista or a < lista[0]:
+        return False
+
+    if a == lista[0]:
+        return True
+
+    return recursive_sequential_search_ordered(lista[1:], a)
+
+print recursive_sequential_search_ordered([1,2,3,5,7], 4)
+
+

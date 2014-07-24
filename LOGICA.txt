@@ -6,3 +6,11 @@ Se a data de validade(final) for maior que a data atual(hoje):
 Quando algo passou do prazo?
 Se a data de validade for menor que a data atual:
 #hoje>prazo
+
+
+
+TIPOS DE FUNÇAO SEARCH:
+
+    sequential (pode ser feita recursivamente)
+    ordered_sequential (pode ser feita recursivamente)
+    binary (pode ser feita recursivamente)
