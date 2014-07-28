@@ -81,16 +81,34 @@
 # print recursive_sequential_search([1,2,3], 4)
 
 
-def recursive_sequential_search_ordered(lista, a):
+# def recursive_sequential_search_ordered(lista, a):
 
-    if not lista or a < lista[0]:
-        return False
+#     if not lista or a < lista[0]:
+#         return False
 
-    if a == lista[0]:
-        return True
+#     if a == lista[0]:
+#         return True
 
-    return recursive_sequential_search_ordered(lista[1:], a)
+#     return recursive_sequential_search_ordered(lista[1:], a)
 
-print recursive_sequential_search_ordered([1,2,3,5,7], 4)
+# print recursive_sequential_search_ordered([1,2,3,5,7], 4)
 
+
+# def recursive_binary_search(lista, item):
+
+# 	if not lista:
+# 		return False
+
+# 	position = len(lista) / 2
+
+# 	if item == lista[position]:
+# 		return True
+		
+# 	if item < lista[position]:
+# 		return recursive_binary_search(lista[:position], item)
+# 	else:
+# 		return recursive_binary_search(lista[position+1:], item)
+
+
+# print recursive_binary_search(range(0,11,2),10)
 
