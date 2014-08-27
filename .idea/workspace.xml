@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cddfa17b-1ddd-49ed-8cfc-f76848b1361a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/myscripts/temp_sort.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LOGICA.txt" afterPath="$PROJECT_DIR$/LOGICA.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chapter_6/sort.py" afterPath="$PROJECT_DIR$/chapter_6/sort.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myscripts/temp_selection_sort.py" afterPath="$PROJECT_DIR$/myscripts/temp_selection_sort.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="problem_solving.iws" />
@@ -31,7 +30,16 @@
       <file leaf-file-name="searching.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chapter_6/searching.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="22" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1770">
+            <state line="86" column="22" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="1770">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="temp_selection_sort.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/myscripts/temp_selection_sort.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="0" selection-start="587" selection-end="587" vertical-scroll-proportion="0.3004292" vertical-offset="0" max-vertical-offset="900">
               <folding />
             </state>
           </provider>
@@ -46,10 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.txt" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="20" selection-start="1196" selection-end="1196" vertical-scroll-proportion="0.059766766" vertical-offset="304" max-vertical-offset="990">
+            <state line="23" column="20" selection-start="1196" selection-end="1196" vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="990">
               <folding />
             </state>
           </provider>
@@ -58,7 +66,7 @@
       <file leaf-file-name="LOGICA.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LOGICA.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="61" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+            <state line="37" column="61" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="660">
               <folding />
             </state>
           </provider>
@@ -67,7 +75,7 @@
       <file leaf-file-name="sort.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chapter_6/sort.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="48" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+            <state line="41" column="0" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
               <folding />
             </state>
           </provider>
@@ -97,8 +105,8 @@
         <option value="$PROJECT_DIR$/myscripts/logic.py" />
         <option value="$PROJECT_DIR$/LOGICA.txt" />
         <option value="$PROJECT_DIR$/myscripts/temp_sort.py" />
-        <option value="$PROJECT_DIR$/chapter_6/sort.py" />
         <option value="$PROJECT_DIR$/myscripts/temp_selection_sort.py" />
+        <option value="$PROJECT_DIR$/chapter_6/sort.py" />
       </list>
     </option>
   </component>
@@ -186,12 +194,12 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -200,26 +208,7 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python.sort">
-    <configuration default="false" name="searching" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/chapter_6" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="problem_solving" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/chapter_6/searching.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.temp_selection_sort">
     <configuration default="false" name="shuffle" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -291,6 +280,25 @@
       <module name="problem_solving" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/chapter_6/sort.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="temp_selection_sort" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/myscripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="problem_solving" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/myscripts/temp_selection_sort.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -420,19 +428,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.searching" />
-      <item index="1" class="java.lang.String" itemvalue="Python.shuffle" />
-      <item index="2" class="java.lang.String" itemvalue="Python.temp_sort" />
-      <item index="3" class="java.lang.String" itemvalue="Python.logic" />
-      <item index="4" class="java.lang.String" itemvalue="Python.sort" />
+      <item index="0" class="java.lang.String" itemvalue="Python.shuffle" />
+      <item index="1" class="java.lang.String" itemvalue="Python.temp_sort" />
+      <item index="2" class="java.lang.String" itemvalue="Python.logic" />
+      <item index="3" class="java.lang.String" itemvalue="Python.sort" />
+      <item index="4" class="java.lang.String" itemvalue="Python.temp_selection_sort" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.sort" />
-        <item index="1" class="java.lang.String" itemvalue="Python.logic" />
-        <item index="2" class="java.lang.String" itemvalue="Python.temp_sort" />
-        <item index="3" class="java.lang.String" itemvalue="Python.shuffle" />
-        <item index="4" class="java.lang.String" itemvalue="Python.searching" />
+        <item index="0" class="java.lang.String" itemvalue="Python.temp_selection_sort" />
+        <item index="1" class="java.lang.String" itemvalue="Python.sort" />
+        <item index="2" class="java.lang.String" itemvalue="Python.logic" />
+        <item index="3" class="java.lang.String" itemvalue="Python.temp_sort" />
+        <item index="4" class="java.lang.String" itemvalue="Python.shuffle" />
       </list>
     </recent_temporary>
   </component>
@@ -554,27 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chapter_6/searching.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="22" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="1770">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myscripts/temp_selection_sort.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="297" selection-end="297" vertical-scroll-proportion="0.06437768" vertical-offset="0" max-vertical-offset="699">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chapter_6/sort.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="48" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LOGICA.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="61" selection-start="1041" selection-end="1041" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
@@ -584,7 +571,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="20" selection-start="1196" selection-end="1196" vertical-scroll-proportion="0.059766766" vertical-offset="304" max-vertical-offset="990">
+        <state line="23" column="20" selection-start="1196" selection-end="1196" vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="990">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapter_6/searching.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="22" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="1770">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapter_6/sort.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myscripts/temp_selection_sort.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="587" selection-end="587" vertical-scroll-proportion="0.3004292" vertical-offset="0" max-vertical-offset="900">
           <folding />
         </state>
       </provider>

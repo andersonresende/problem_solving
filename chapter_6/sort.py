@@ -37,3 +37,5 @@ random.shuffle(lst)
 print "Short bubble sort:"
 print "Unordered lst: %s" % lst
 print "Ordered lst: %s" % short_bubble_sort(lst)
+
+
