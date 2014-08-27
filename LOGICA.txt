@@ -1,3 +1,19 @@
+Regras lógicas:
+
+LOOPS:
+
+1 - Decrementação
+2 - Loop menor
+3 - Loop igual
+4 - Equivalentes
+5 - Valor cont (volta(comecando em 0)+cont_inicial)
+6 - Descoberta (se quiser uma determinada quantidade de voltas començando com um cont definido e só somar
+o cont + quantidade de voltas desejadas. cont < cont+quantidade)
+
+DLLEVD
+
+IFS:
+
 
 PRAZO:
 Quando algo esta dentro do prazo?
@@ -16,3 +32,7 @@ TIPOS DE FUNÇAO SEARCH:
     binary (pode ser feita recursivamente)
     hashing sem chave - apenas o valor e inserido na tabela
     		com chave - e escolhido um valor para chavear o valor que sera inserido na tabela
+
+TIPOS DE FUNÇÃO SORT:
+    bubble sort
+    short bubble sort
