@@ -14,3 +14,5 @@ TIPOS DE FUNÇAO SEARCH:
     sequential (pode ser feita recursivamente)
     ordered_sequential (pode ser feita recursivamente)
     binary (pode ser feita recursivamente)
+    hashing sem chave - apenas o valor e inserido na tabela
+    		com chave - e escolhido um valor para chavear o valor que sera inserido na tabela
