@@ -1,3 +1,18 @@
+Regras lógicas:
+
+LOOPS:
+
+1 - Decrementação
+2 - Loop menor
+3 - Loop igual
+4 - Equivalentes
+5 - Valor cont (volta(comecando em 0)+cont_inicial)
+6 - Descoberta (se quiser uma determinada quantidade de voltas començando com um cont definido e só somar
+o cont + quantidade de voltas desejadas. cont < cont+quantidade)
+
+DLLEVD
+
+IFS:
 
 PRAZO:
 Quando algo esta dentro do prazo?
@@ -14,3 +29,7 @@ TIPOS DE FUNÇAO SEARCH:
     sequential (pode ser feita recursivamente)
     ordered_sequential (pode ser feita recursivamente)
     binary (pode ser feita recursivamente)
+
+TIPOS DE FUNÇÃO SORT:
+    bubble sort
+    short bubble sort
