@@ -14,6 +14,8 @@ DLLEVD
 
 IFS:
 
+EXTRA:
+    Tem que saber em menos de 1s como converter um foor em while e vice-versa.
 
 PRAZO:
 Quando algo esta dentro do prazo?
@@ -36,3 +38,4 @@ TIPOS DE FUNÇAO SEARCH:
 TIPOS DE FUNÇÃO SORT:
     bubble sort (functions bubble always put larger integers on the last positions after each loop)
     short bubble sort (more faster than standard bubble sort)
+    
