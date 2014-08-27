@@ -34,5 +34,5 @@ TIPOS DE FUNÇAO SEARCH:
     		com chave - e escolhido um valor para chavear o valor que sera inserido na tabela
 
 TIPOS DE FUNÇÃO SORT:
-    bubble sort
-    short bubble sort
+    bubble sort (functions bubble always put larger integers on the last positions after each loop)
+    short bubble sort (more faster than standard bubble sort)
