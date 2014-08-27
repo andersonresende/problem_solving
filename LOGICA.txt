@@ -14,6 +14,7 @@ DLLEVD
 
 IFS:
 
+
 PRAZO:
 Quando algo esta dentro do prazo?
 Se a data de validade(final) for maior que a data atual(hoje):
