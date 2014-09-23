@@ -8,7 +8,7 @@ LOOPS:
 6 - Descoberta (se quiser uma determinada quantidade de voltas començando com um cont definido e só somar
 o cont + quantidade de voltas desejadas. cont < cont+quantidade)
 4 - Equivalentes
-5 - Valor do cont apos incrementacao (volta+cont_inicial)
+5 - Valor do cont apos incrementacao ((volta*incrementacao)+cont_inicial).
 
 Explique como de 5 a 10 existem 6 numeros, mas 10 -5 e igual a 5.??
 
