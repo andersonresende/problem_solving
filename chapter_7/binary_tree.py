@@ -1,4 +1,8 @@
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+
+""" A set of functions of binary trees """
+
 
 def binary_tree(root):
 	return [root, [], []]
@@ -34,7 +38,6 @@ insert_right(tree, 'C')
 print tree
 insert_left(tree[1], 'D')
 print tree
-
 print get_root_val(tree)
 print get_left_child(tree)
 

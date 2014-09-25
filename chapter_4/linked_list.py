@@ -1,8 +1,10 @@
+# -*- coding:utf-8 -*-
 class Node(object):
     '''
     O no e necessario pq tiramos dos itens utilizados no encadeiamento
     a responsabilidade de receberem eles mesmos como parametros, quebrando
-    a semantica do class. ex: Pessoa receber uma Pessoa...
+    a semantica do class. A lista não receberia outra lista. Uma lista
+    receberia sempre valores, como uma list em python.
     '''
     def __init__(self,initdata):
         self.data = initdata
@@ -196,18 +198,19 @@ class OrderedList():
             previous.setNext(current.getNext())
 
 
-ul = OrderedList()
-ul.add(8)
-ul.add(1)
-ul.add(2)
-ul.add(3)
-ul.add(6)
+if __name__ == '__main__':
+    ul = OrderedList()
+    ul.add(8)
+    ul.add(1)
+    ul.add(2)
+    ul.add(3)
+    ul.add(6)
 
-print ul.index(1)
-print ul.index(2)
-print ul.index(3)
-print ul.index(8)
-print ul.index(6)
+    print ul.index(1)
+    print ul.index(2)
+    print ul.index(3)
+    print ul.index(8)
+    print ul.index(6)
 
 
 
