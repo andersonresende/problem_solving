@@ -1,4 +1,15 @@
 # -*- coding:utf-8 -*-
+
+'''
+Propriedades de linked lists:
+    1. A linked list e criada atraves da ligação entre nos internamente, ou seja,
+    a classe recebe um nó que esta ligado a outros nós.
+    2 - A lista não armazena valores. Os valores estão contido nos nós.
+    3 - Por que eu não posso retornar o valor do item por posição?
+
+'''
+
+
 class Node(object):
     '''
     O no e necessario pq tiramos dos itens utilizados no encadeiamento
@@ -115,6 +126,15 @@ class UnorderedList(object):
         else:
             previous.setNext(current.getNext())
 
+    def __iter__(self):
+        """Generetor thats loop a list"""
+        def rec(node):
+            if node:
+                yield node.getData()
+                for n in rec(node.getNext()):
+                    yield n
+        return rec(self.head)
+
 
 class OrderedList():
 
@@ -199,18 +219,37 @@ class OrderedList():
 
 
 if __name__ == '__main__':
-    ul = OrderedList()
-    ul.add(8)
-    ul.add(1)
-    ul.add(2)
-    ul.add(3)
-    ul.add(6)
+    lst = UnorderedList()
+    for x in range(1,4):
+        lst.add(x)
 
-    print ul.index(1)
-    print ul.index(2)
-    print ul.index(3)
-    print ul.index(8)
-    print ul.index(6)
+    #print lst.__iter__()
+    for l in lst:
+        print l
+
+    # def r(lst):
+    #     if lst:
+    #         yield lst[0] # na segunda volta o retorno nao e printado pq ele retorna a chamada pra o for abaixo e o yield x vai ser chamado.
+    #         for x in r(lst[1:]):
+    #             yield x
+
+    # ge = r([1,2,3])
+    # print ge.next()
+    # print ge.next()
+    # print ge.next()
+    # print ge.next()
+    # ul = OrderedList()
+    # ul.add(8)
+    # ul.add(1)
+    # ul.add(2)
+    # ul.add(3)
+    # ul.add(6)
+
+    # print ul.index(1)
+    # print ul.index(2)
+    # print ul.index(3)
+    # print ul.index(8)
+    # print ul.index(6)
 
 
 
