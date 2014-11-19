@@ -5,8 +5,6 @@ Propriedades de linked lists:
     1. A linked list e criada atraves da ligação entre nos internamente, ou seja,
     a classe recebe um nó que esta ligado a outros nós.
     2 - A lista não armazena valores. Os valores estão contido nos nós.
-    3 - Por que eu não posso retornar o valor do item por posição?
-
 '''
 
 
@@ -220,12 +218,12 @@ class OrderedList():
 
 if __name__ == '__main__':
     lst = UnorderedList()
-    for x in range(1,4):
-        lst.add(x)
-
-    #print lst.__iter__()
-    for l in lst:
-        print l
+    lst.insert(0,'a')
+    # lst.append('b')
+    # lst.append('c')
+    # lst.append('d')
+    print lst.head
+    print lst.index(0)
 
     # def r(lst):
     #     if lst:
