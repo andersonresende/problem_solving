@@ -52,11 +52,11 @@ class BinaryTree(object):
             if self.rightChild:
                 self.rightChild.preorder()
 
-tree = BinaryTree('livro')
-tree.insertLeft('cap.1')
-tree.insertRight('cap.2')
-tree.getLeftChild().insertLeft('sec1')
-tree.getLeftChild().insertRight('sec2')
+tree = BinaryTree('*')
+tree.insertLeft('+')
+tree.insertRight(5)
+tree.getLeftChild().insertLeft(1)
+tree.getLeftChild().insertRight(1)
 
 
 def preorder(tree):
@@ -78,17 +78,55 @@ def postorder(tree):
 
 
 def inorder(tree):
-  if tree != None:
-      inorder(tree.getLeftChild())
-      print(tree.getRootVal())
-      inorder(tree.getRightChild())
+    if tree != None:
+        exp = '('+inorder(tree.getLeftChild())
+        exp = exp +str(tree.getRootVal())
+        exp = exp +inorder(tree.getRightChild())+')'
+        return exp
+    else:
+        return ''
 
 
-preorder(tree)
-print "-------------------------"
-postorder(tree)
-print "-------------------------"
-inorder(tree)
+def printexp(tree):
+  sVal = ""
+  if tree:
+      sVal = printexp(tree.getLeftChild())
+      sVal = sVal + str(tree.getRootVal())
+      sVal = sVal + printexp(tree.getRightChild())
+      sVal = '('+sVal+')'
+  return sVal
+
+# preorder(tree)
+# print "-------------------------"
+# postorder(tree)
+# print "-------------------------"
+exp = printexp(tree)
+print exp
+
+
+def sum_by(tree):
+    """Nesta versão eu nao preciso entrar em uma volta pra verificar se tem valor"""
+    total = tree.getRootVal()
+    if tree.getLeftChild():
+        total = total + sum_by(tree.getLeftChild())
+        total = total + sum_by(tree.getRightChild())
+
+    return total
+
+#print sum_by(tree)
+
+
+def sum_by1(tree):
+    """Nesta versão eu entro na volta, mesmo que não tenha valor e depois retorno 0"""
+    if not tree:
+        return 0
+    total = tree.getRootVal()
+    total = total + sum_by1(tree.getLeftChild())
+    total = total + sum_by1(tree.getRightChild())
+
+    return total
+
+#print sum_by1(tree)
 
 
 #pra que fazer uma recursao entrar em uma volta, sera que e preciso apenas quando desejamos retorno.
@@ -107,5 +145,3 @@ def sum_nested(lst):
     return total + sum_nested(lst[1:])
 
 print sum_nested([1,1,1,1,[1,1,1,1]])
-
-# Amanha somar todos os valores da tree, admitindo que todos sejam inteiros
