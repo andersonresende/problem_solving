@@ -1,4 +1,7 @@
+#! -*- coding: utf-8 -*-
+import operator
 from binary_tree_class import BinaryTree
+
 
 class Stack:
     def __init__(self):
@@ -22,6 +25,8 @@ class Stack:
 
 
 def buildParseTree(fpexp):
+    """ Função que recebe uma operação aritmetica e constroi uma árvore """
+
     fplist = fpexp.split()
     pStack = Stack()
     eTree = BinaryTree('')
@@ -47,4 +52,23 @@ def buildParseTree(fpexp):
             raise ValueError
     return eTree
 
+
+def evaluate(parseTree):
+    """ Função que recebe uma árvore aritimética e retorna o resultado da operação """
+
+    opers = {'+': operator.add, '-': operator.sub, '*': operator.mul, '/': operator.truediv}
+
+    leftC = parseTree.getLeftChild()
+    rightC = parseTree.getRightChild()
+
+    if leftC and rightC:
+        fn = opers[parseTree.getRootVal()]
+        return fn(evaluate(leftC), evaluate(rightC))
+    else:
+        return parseTree.getRootVal()
+
+
 pt = buildParseTree("( ( 10 + 5 ) * 3 )")
+
+print evaluate(pt)
+

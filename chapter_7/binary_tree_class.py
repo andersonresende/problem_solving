@@ -8,7 +8,7 @@ class BinaryTree(object):
         Não usamos nodes para juntar as binarys trees porque 
         semanticamente não faz muito sentido e também porque 
         não haveria necessidade de colocar o valor root da 
-        tree em um node. 
+        tree em um node.
     """
 
     def __init__(self,rootObj):
