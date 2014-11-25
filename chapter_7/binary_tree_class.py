@@ -145,3 +145,5 @@ def sum_nested(lst):
     return total + sum_nested(lst[1:])
 
 print sum_nested([1,1,1,1,[1,1,1,1]])
+
+#tarefa de casa tirar os parenteses desnecessarios da printexp.
