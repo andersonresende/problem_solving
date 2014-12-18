@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Pra que serve o return em uma recurção?
+# 1)Pra que serve o return em uma recurção?
 # return só deve ser usado quando precisamos do valor para efetuar alguma operação.
 
 
@@ -12,13 +12,13 @@ def ida(n):
 #ida(0)
 
 
-# pra onde uma volta da funcao recursiva volta?
+#2)pra onde uma volta da funcao recursiva volta?
 # sempre pra o mesmo ponto (a sua chamada)
 
 # se vc der um print em uma chamada que nao retorne nada ele dara None
 
 
-# codigo substituto
+# 3) codigo substituto
 # não precisa usar pass, use a condição oposta a condição limite. ;)
 
 # def do(valor):
@@ -34,7 +34,7 @@ def ida(n):
 
 # Recurcão básica
 
-
+# 4) Calculo do Limite, voltas validas e invalidas
 def loop(n, limit):
     if n < limit: # isso que determina a quantidade de voltas, assim como em um for comum, sempre lembrar que a recursao da as voltas validas + uma volta invalida que e quando ela retorna.
         print n
@@ -44,7 +44,7 @@ def loop(n, limit):
 loop(1, 5)
 
 
-# Regra do print, prova que independente de onde a variavel esteja em uma volta da recursao o seu valor e o mesmo.
+# 5) Regra do print, prova que independente de onde a variavel esteja em uma volta da recursao o seu valor e o mesmo.
 
 
 

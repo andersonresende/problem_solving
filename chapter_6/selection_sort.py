@@ -54,7 +54,28 @@ def short_while_selection_sort(lst):
     return lst
 
 
-print while_selection_sort([1, 2, 5, 3, 7, 4,10])
+#print while_selection_sort([1, 2, 5, 3, 7, 4,10])
+
+
+
+
+def select(lst):
+    cont1 = 0
+    while cont1 < len(lst)-1:
+        max_location = 0
+        cont2 = 0
+        while cont2 < len(lst)-cont1:
+
+            if lst[max_location] < lst[cont2]:
+                max_location = cont2
+            cont2+=1
+
+        cont1+=1
+        lst[len(lst)-cont1], lst[max_location] = lst[max_location], lst[len(lst)-cont1]
+    return lst
+
+print select([1, 5, 2,9,6,4,7])
+
 
 
 
