@@ -3,16 +3,14 @@ Regras lógicas:
 LOOPS:
 
 1 - Decrementação
-2 - Loop menor
-3 - Loop igual
-6 - Descoberta (se quiser uma determinada quantidade de voltas començando com um cont definido e só somar
-o cont + quantidade de voltas desejadas. cont < cont+quantidade)
-4 - Equivalentes
-5 - Valor do cont apos incrementacao ((volta*incrementacao)+cont_inicial).
+2 -  Equivalentes
+3 -  Valor do cont apos incrementacao (cont_inicial + (volta*incrementacao)). 
+4 - Quantidade (se quiser uma determinada quantidade de voltas començando com um cont definido e só somar o cont + quantidade de voltas desejadas. cont < cont+quantidade)
+5 -  Loop menor and diferent
 
 Explique como de 5 a 10 existem 6 numeros, mas 10 -5 e igual a 5.??
 
-DLLDEV
+DEVQL
 
 IFS:
 
