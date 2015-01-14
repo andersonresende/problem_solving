@@ -133,6 +133,23 @@ class UnorderedList(object):
                     yield n
         return rec(self.head)
 
+    def remove_duplicates(self):
+
+        node = self.head
+
+        while node != None:
+            anterior = node
+            node1 = node.next
+            while node1 != None:
+                if node1.data == node.data:
+                    anterior.next = node1.next
+                    node1 = node1.next
+                else:
+                    anterior = node1
+                    node1 = node1.next
+            node = node.next
+
+
 
 class OrderedList():
 
@@ -217,13 +234,70 @@ class OrderedList():
 
 
 if __name__ == '__main__':
-    lst = UnorderedList()
-    lst.insert(0,'a')
-    # lst.append('b')
-    # lst.append('c')
-    # lst.append('d')
-    print lst.head
-    print lst.index(0)
+#     lst = UnorderedList()
+#     lst.insert(0,'1')
+#     lst.append('1')
+#     lst.append('2')
+#     lst.append('2')
+#     lst.append('3')
+#     lst.append('1')
+#     lst.append('3')
+#     lst.append('3')
+#     lst.append('5')
+#     lst.remove_duplicates()
+#     print lst.size()
+#
+#     def loop_list(node):
+#         print node.data
+#         if  node.next != None:
+#             loop_list(node.next)
+#
+#     loop_list(lst.head)
+
+    def removeCircular(node):
+        if not node:
+            return None
+
+        node1 = node
+        found = False
+        while node1 and not found:
+
+            node2 = node1.next
+            while node2:
+                if node1 == node2:
+                    found = True
+                    value = node1.data
+                    node1.value = node1.next.data
+                    node1.next = node1.next.next
+                    node2.value = value
+                    node2.next = None
+                node2 = node2.next
+
+            if not found:
+                node1 = node1.next
+
+
+        if found:
+            print node1.data
+            print node1.next
+
+        return node
+
+    node1 = Node(1)
+    node2 = Node(2)
+    node3 = Node(3)
+    node1.next = node3
+    node2.next = node1
+    node3.next = node2
+
+    print removeCircular(node3)
+
+    while node2:
+
+        print node2.data
+
+        node2 = node2.next
+
 
     # def r(lst):
     #     if lst:
