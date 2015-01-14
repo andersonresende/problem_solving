@@ -1,41 +1,54 @@
-Regras lógicas:
+1) Regras lógicas:
 
-LOOPS:
+"DEVQL"
 
 1 - Decrementação
-2 -  Equivalentes
-3 -  Valor do cont apos incrementacao (cont_inicial + (volta*incrementacao)). 
+2 - Equivalentes
+3 - Valor do cont apos incrementacao (cont_inicial + (volta*incrementacao)).
 4 - Quantidade (se quiser uma determinada quantidade de voltas començando com um cont definido e só somar o cont + quantidade de voltas desejadas. cont < cont+quantidade)
-5 -  Loop menor and diferent
-
-Explique como de 5 a 10 existem 6 numeros, mas 10 -5 e igual a 5.??
-
-DEVQL
-
-IFS:
-
-EXTRA:
-    Tem que saber em menos de 1s como converter um foor em while e vice-versa.
-
-PRAZO:
-Quando algo esta dentro do prazo?
-Se a data de validade(final) for maior que a data atual(hoje):
-#hoje<prazo
-Quando algo passou do prazo?
-Se a data de validade for menor que a data atual:
-#hoje>prazo
+5 - Loop menor e diferente
 
 
 
-TIPOS DE FUNÇAO SEARCH:
+2)
 
-    sequential (pode ser feita recursivamente)
-    ordered_sequential (pode ser feita recursivamente)
-    binary (pode ser feita recursivamente)
-    hashing sem chave - apenas o valor e inserido na tabela
-    		com chave - e escolhido um valor para chavear o valor que sera inserido na tabela
+- Imprimir todos os elementos de um array : while cont <  len(array)  // for x in range(0, len(array))
 
-TIPOS DE FUNÇÃO SORT:
-    bubble sort (functions bubble always put larger integers on the last positions after each loop)
-    short bubble sort (more faster than standard bubble sort)
+- while == for com range
+    * ranges nao precisam de cont e sua incrementação
+
+- Comparar dois elementos de um array consecutivamente // Estouro de array
+    a) diminuir o tamanha da lista e incrementar o cont:
+    - Se quiser incrementar o cont durante a comparacao vc tera que no while ir ate o tamanho da lista - 1:
+        Assim evitara o estouro de array. O range equivale ao while, logo e preciso fazer a mesma coisa.
+
+    b) mantar o tamanho da lista e comecar com o cont em 1 e o primeiro elemento ser cont - 1.
+    - Outra opção é começar o cont em 1 e no corpo fazer l[cont-1] < l[cont], não precisando dessa forma,
+        diminuir o valor da lista no while/range por -1.
+
+    * se vc esta comparando com um valor de fora, ou seja, usando apenas um valor do array pode usar o cont+1 ou
+    apenas o cont, lembrando que tera que retirar -1 do tamanho da lista no primeiro caso.
+
+
+
+- Rerranjo elementos em uma lista:
+    É preciso trabalhar com os indices e não com os valores.
+
+
+3) IF'S
+
+    - Escadinha: E muito melhor usar uma flag para retorno do que varios ifs e elses aninhados. Substituição de elses por flags.
+
+
+    - Elif : um elif e um else seguido de outro if. Digamos que dentro do outro else ele precise fazer algumas condições
+        então usar elif. if's soltos com return são iguais a um elif, ou seja ele achando a condicao nao avaliara as outras.
+        Se nao houvesse retorno ele passaria por todas.
+
+
+
+
+
+
+
+
     
