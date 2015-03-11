@@ -96,8 +96,8 @@ def printexp(tree):
       sVal = '('+sVal+')'
   return sVal
 
-# preorder(tree)
-# print "-------------------------"
+preorder(tree)
+print "-------------------------"
 # postorder(tree)
 # print "-------------------------"
 exp = printexp(tree)
